@@ -1,0 +1,69 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# TheraLink - Cursor Rules for Development
+
+## General Project Structure
+- Use Next.js (App Router) for frontend development.
+- Follow the MVC (Model-View-Controller) pattern for backend development.
+- Use ESLint & Prettier for consistent formatting.
+- Use TypeScript for type safety across frontend and backend.
+- Use RESTful API design with proper naming conventions.
+- Store environment variables in `.env.local`.
+
+## Authentication & User Management
+- Implement OAuth 2.0 & Supabase authentication.
+- Store JWT tokens securely using httpOnly cookies.
+- Use Role-Based Access Control (RBAC):
+  - `user` → Patients & General Users
+  - `therapist` → Verified therapists
+  - `admin` → Platform moderators
+
+## AI & ML Integration
+- Use the Gemini API for chatbot responses.
+- Implement caching (Redis/SWR) to optimize API calls.
+- Use serverless functions for AI requests to prevent latency.
+
+## Database & API Design
+- Use Supabase as the primary database.
+- Ensure proper indexing and relations between tables.
+- Define the following API endpoints:
+  - `/api/auth.ts` → Authentication
+  - `/api/therapists.ts` → Therapist data & availability
+  - `/api/chatbot.ts` → AI chatbot integration
+  - `/api/mood.ts` → Mood tracking API
+- Implement pagination for therapist listing and community discussions.
+
+## Frontend Development
+- Use Tailwind CSS for styling.
+- Use ShadCN UI components for a modern UI.
+- Use Context API (or Zustand) for state management.
+- Ensure mobile responsiveness with Flexbox/Grid.
+
+## Video Calls & Messaging
+- Use Twilio for real-time messaging and video calls.
+- Implement WebSockets for live chat & notifications.
+- Ensure end-to-end encryption for messaging.
+
+## Deployment & CI/CD
+- Use Vercel for frontend deployment.
+- Set up GitHub Actions for CI/CD.
+- Automate Supabase migrations using SQL scripts.
+- Write unit tests with Jest for APIs and UI components.
+
+## Code Quality & Security
+- Enforce strict TypeScript settings (`strict: true` in tsconfig.json).
+- Avoid direct database queries in frontend code.
+- Implement proper error handling in all API routes.
+- Validate all user input to prevent XSS and SQL Injection attacks.
+- Use secure headers via `helmet` middleware in Express.js.
+
+## Additional Guidelines
+- Use Git with proper commit messages following Conventional Commits.
+- Follow a feature-branch workflow (`feature/xyz-feature`).
+- Write meaningful comments for complex logic.
+- Document API endpoints using OpenAPI/Swagger.
+
+# End of Rules
